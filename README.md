@@ -61,7 +61,11 @@ sudo npm install -g folderctl
 
 To see where `npm` installed the package, you can type `npm root -g`.  This is usually `/usr/local/lib/node_modules`.  Once installed globally, you should have a `folderctl` command in your PATH.  Use this to start, stop and otherwise control the daemon.  See [Command-Line Usage](#command-line-usage) below.
 
-Note that Folder Control will install itself as a [LaunchAgent](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html), so it will autostart on boot.  This is removed upon uninstall.
+If you want Folder Control to install itself as a [LaunchAgent](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html) (so it will startup on boot), run this command next:
+
+```
+sudo folderctl boot
+```
 
 ## Quick Start
 
@@ -564,10 +568,11 @@ Folder Control isn't for you?  No problem, you can remove it with these commands
 
 ```
 folderctl stop
+sudo folderctl unboot
 sudo npm remove -g folderctl
 ```
 
-To remove all trace, you may want to delete these files as well:
+To remove all traces of the software, you may want to delete these files as well:
 
 ```
 rm -v ~/Library/Preferences/folderctl.json

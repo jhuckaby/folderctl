@@ -1,6 +1,6 @@
 {
   "name": "folderctl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple folder monitoring daemon for running custom actions on change.",
   "author": "Joseph Huckaby <jhuckaby@gmail.com>",
   "homepage": "https://github.com/jhuckaby/folderctl",
@@ -31,7 +31,7 @@
     "pixl-boot": "^1.0.0"
   },
   "scripts": {
-  	"postinstall": "pixl-boot install --script bin/control.sh",
-  	"preuninstall": "pixl-boot uninstall"
+  	"boot": "pixl-boot install --script bin/control.sh",
+  	"unboot": "pixl-boot uninstall"
   }
 }

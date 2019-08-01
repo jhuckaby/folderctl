@@ -115,6 +115,12 @@ do
 		echo ""
 		$BINARY --debug --echo --color
 	;;
+	boot)
+		npm run boot
+	;;
+	unboot)
+		npm run unboot
+	;;
     *)
 	echo "usage: $0 (start|stop|restart|status|help)"
 	cat <<EOF
@@ -124,6 +130,8 @@ stop       - Stops $NAME and wait until it actually exits.
 restart    - Calls stop, then start (hard restart).
 debug      - Starts $NAME in debug move (no fork, log echo).
 status     - Checks whether $NAME is currently running.
+boot       - Install $NAME as a startup service.
+unboot     - Remove $NAME from the startup services.
 help       - Displays this screen.
 
 EOF
