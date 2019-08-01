@@ -1,0 +1,29 @@
+{
+	
+	"folders": [
+		{
+			"path": "Dropbox",
+			"actions": {
+				"changed": {
+					"exec": "say \"We changed [filename].\"", 
+					"notify": "We changed [filename].",
+					"sound": "/System/Library/Sounds/Ping.aiff"
+				}
+			}
+		}
+	],
+	
+	"concurrency": 1,
+	"timeout": 30,
+	"debounce_ms": 250,
+	"filename_exclude": "^\\.",
+	"salt_string": "",
+	"log_dir": "Library/Logs",
+	"log_filename": "folderctl.log",
+	"log_columns": ["hires_epoch", "date", "hostname", "pid", "component", "category", "code", "msg", "data"],
+	"log_crashes": true,
+	"crash_filename": "folderctl.crash.log",
+	"pid_file": "Library/Logs/folderctl.pid",
+	"debug_level": 9
+	
+}
