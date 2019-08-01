@@ -95,7 +95,7 @@ Upon initial installation, you will need to create this file.  Here is a sample 
 {
 	"folders": [
 		{
-			"path": "~/Dropbox",
+			"path": "Dropbox",
 			"actions": {
 				"changed": {
 					"exec": "say \"We changed [filename].\"", 
