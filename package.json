@@ -1,6 +1,6 @@
 {
   "name": "folderctl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple folder monitoring daemon for running custom actions on change.",
   "author": "Joseph Huckaby <jhuckaby@gmail.com>",
   "homepage": "https://github.com/jhuckaby/folderctl",

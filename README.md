@@ -540,6 +540,8 @@ Here is the full command list:
 | `stop` | Stop Folder Control and wait until it actually exits. |
 | `restart` | Calls stop, then start (hard restart). |
 | `status` | Checks whether Folder Control is currently running. |
+| `boot` | Install Folder Control as a startup service. |
+| `unboot` | Remove Folder Control from the startup services. |
 | `debug` | Start the service in debug mode (see [Debugging](#debugging) below). |
 
 ### Debugging
