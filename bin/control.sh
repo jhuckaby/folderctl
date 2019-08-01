@@ -116,9 +116,11 @@ do
 		$BINARY --debug --echo --color
 	;;
 	boot)
+		cd $HOMEDIR
 		npm run boot
 	;;
 	unboot)
+		cd $HOMEDIR
 		npm run unboot
 	;;
     *)
