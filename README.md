@@ -16,6 +16,34 @@
 ## Table of Contents
 
 <!-- toc -->
+- [Usage](#usage)
+	* [Prerequisites](#prerequisites)
+	* [Installation](#installation)
+	* [Quick Start](#quick-start)
+	* [Configuration](#configuration)
+		+ [Folders](#folders)
+			- [Actions](#actions)
+			- [Macros](#macros)
+		+ [Folder Defaults](#folder-defaults)
+		+ [Global Configuration](#global-configuration)
+	* [Recipes](#recipes)
+		+ [Basic Folder Sync](#basic-folder-sync)
+		+ [Sync on Startup](#sync-on-startup)
+		+ [Sync Deletes](#sync-deletes)
+		+ [Copy Screenshot URL to Clipboard](#copy-screenshot-url-to-clipboard)
+		+ [Copy Hashed URL to Clipboard](#copy-hashed-url-to-clipboard)
+		+ [Displaying Notifications](#displaying-notifications)
+		+ [Playing Sounds](#playing-sounds)
+		+ [Excluding Hidden Files](#excluding-hidden-files)
+		+ [Detecting Specific Errors](#detecting-specific-errors)
+		+ [Two-Way Sync](#two-way-sync)
+		+ [Custom Environment Variables](#custom-environment-variables)
+	* [Command-Line Usage](#command-line-usage)
+		+ [Debugging](#debugging)
+		+ [Upgrading](#upgrading)
+		+ [Uninstall](#uninstall)
+- [Logging](#logging)
+- [License](#license)
 
 # Usage
 
