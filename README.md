@@ -95,6 +95,7 @@ Upon initial installation, you will need to create this file.  Here is a sample 
 {
 	"folders": [
 		{
+			"enabled": true,
 			"path": "Dropbox",
 			"actions": {
 				"changed": {
@@ -130,6 +131,7 @@ The `folders` property should be an array of objects, with each object represent
 
 ```js
 {
+	"enabled": true,
 	"path": "Dropbox",
 	"actions": {
 		"changed": {
@@ -149,6 +151,7 @@ Here are all the properties you can define inside each folder:
 |----------|------|-------------|
 | `path` | String | **(Required)** The filesystem path to the folder you want to watch.  Paths are relative to your home directory. |
 | `actions` | Object | **(Required)** An object containing actions to take for specific events.  See below for details. |
+| `enabled` | Boolean | *(Optional)* Enables or disables the folder monitor.  If this property is missing the folder is enabled by default. |
 | `concurrency` | Integer | *(Optional)* The number of concurrent threads to use when executing your commands (defaults to `1`). |
 | `timeout` | Integer | *(Optional)* The maximum number of seconds to allow your commands to take, before timing out (defaults to `30`). |
 | `debounce_ms` | Integer | *(Optional)* The number of milliseconds to delay raw filesystem events before taking action (defaults to `250` ms). |
@@ -255,6 +258,7 @@ Here is a simple recipe that keeps my local `Documents/Notes` folder one-way syn
 
 ```js
 {
+	"enabled": true,
 	"path": "Documents/Notes",
 	"actions": {
 		"changed": {
@@ -276,6 +280,7 @@ You can use the `startup` action to perform a pre-sync of your entire folder on 
 
 ```js
 {
+	"enabled": true,
 	"path": "Documents/Notes",
 	"actions": {
 		"startup": {
@@ -296,6 +301,7 @@ Synchronizing deletes requires special care, and a special `deleted` action with
 
 ```js
 {
+	"enabled": true,
 	"path": "Documents/Notes",
 	"actions": {
 		"changed": {
@@ -316,6 +322,7 @@ Here is a recipe that watches for new macOS screenshots, which typically arrive 
 
 ```js
 {
+	"enabled": true,
 	"path": "Desktop",
 	"filename_match": "^Screen\s+Shot.+\\.png$",
 	"actions": {
@@ -354,6 +361,7 @@ If you want slightly more anonymized S3 paths and URLs, you can use the special 
 
 ```js
 {
+	"enabled": true,
 	"path": "Dropbox/Public",
 	"actions": {
 		"changed": {
@@ -379,6 +387,7 @@ To display a notification when your shell script completes, you can set the `not
 
 ```js
 {
+	"enabled": true,
 	"path": "Documents/Notes",
 	"actions": {
 		"changed": {
@@ -395,6 +404,7 @@ You can optionally customize the icon that accompanies the notification.  It def
 
 ```js
 {
+	"enabled": true,
 	"path": "Documents/Notes",
 	"actions": {
 		"changed": {
@@ -414,6 +424,7 @@ To play a sound effect when your shell script completes, you can set the `sound`
 
 ```js
 {
+	"enabled": true,
 	"path": "Documents/Notes",
 	"actions": {
 		"changed": {
@@ -471,6 +482,7 @@ In most cases Folder Control will automatically catch and notify you about error
 
 ```js
 {
+	"enabled": true,
 	"path": "Documents/Notes",
 	"actions": {
 		"changed": {
@@ -493,6 +505,7 @@ To sync in both directions, you can use one of the scheduler actions.  Meaning, 
 
 ```js
 {
+	"enabled": true,
 	"path": "Documents/Notes",
 	"actions": {
 		"changed": {
@@ -614,14 +627,14 @@ Here is an example log excerpt showing a typical startup with one folder.  In al
 And here is an example log excerpt for a folder change event:
 
 ```
-[/Users/jhuckaby/Dropbox][debug][9][Raw FS Event: /Users/jhuckaby/Dropbox/PlainText/Notes.txt][]
-[/Users/jhuckaby/Dropbox][debug][8][Processing normalized change event][["/Users/jhuckaby/Dropbox/PlainText/Notes.txt"]]
-[/Users/jhuckaby/Dropbox][debug][9][Dequeuing event: changed][{"file":"/Users/jhuckaby/Dropbox/PlainText/Notes.txt"}]
-[/Users/jhuckaby/Dropbox][debug][9][Executing shell script for changed: say "We changed Notes.txt."][]
-[/Users/jhuckaby/Dropbox][debug][9][Raw command output:  ][{"code":0,"signal":null}]
-[/Users/jhuckaby/Dropbox][debug][9][Command was successful][]
-[/Users/jhuckaby/Dropbox][debug][9][Displaying notification: We changed Notes.txt.][]
-[/Users/jhuckaby/Dropbox][debug][9][Playing sound: /System/Library/Sounds/Ping.aiff][]
+[Dropbox][debug][9][Raw FS Event: /Users/jhuckaby/Dropbox/PlainText/Notes.txt][]
+[Dropbox][debug][8][Processing normalized change event][["/Users/jhuckaby/Dropbox/PlainText/Notes.txt"]]
+[Dropbox][debug][9][Dequeuing event: changed][{"file":"/Users/jhuckaby/Dropbox/PlainText/Notes.txt"}]
+[Dropbox][debug][9][Executing shell script for changed: say "We changed Notes.txt."][]
+[Dropbox][debug][9][Raw command output:  ][{"code":0,"signal":null}]
+[Dropbox][debug][9][Command was successful][]
+[Dropbox][debug][9][Displaying notification: We changed Notes.txt.][]
+[Dropbox][debug][9][Playing sound: /System/Library/Sounds/Ping.aiff][]
 ```
 
 If you are concerned about log file size, and/or you run Folder Control with a high `debug_level` (verbosity), you might want to enable log rotation.  This can be done easily on macOS by creating the following file:

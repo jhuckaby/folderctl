@@ -2,6 +2,7 @@
 	
 	"folders": [
 		{
+			"enabled": true,
 			"path": "Dropbox",
 			"actions": {
 				"changed": {
