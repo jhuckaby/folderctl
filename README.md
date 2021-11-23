@@ -243,7 +243,7 @@ Here are all the top-level global configuration properties which are not folder 
 | `log_columns` | Array | An array of log columns to include in the event log. |
 | `log_crashes` | Boolean | If set to true, Folder Control will log crashes. |
 | `crash_filename` | String | The filename of the crash log, should a crash occur. |
-| `pid_file` | String | Path to the PID file used by the control script to start/stop the daemon.  Please do not change this. | String |
+| `pid_file` | String | Path to the PID file used by the control script to start/stop the daemon.  Please do not change this. |
 | `debug_level` | Integer | A verbosity control for the log file, where `1` is quiet and `10` is very loud indeed. |
 
 See [Logging](#logging) below for more on the Folder Control log.
